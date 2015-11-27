@@ -11,7 +11,7 @@ import pathfinder from './lib/pathfinder'
 import router from './lib/router'
 
 /* Routes */
-import routes from './routes'
+import routes from './config/routes'
 
 /* Store */
 import configureStore from './store/configureStore'
