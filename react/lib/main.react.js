@@ -4,24 +4,24 @@ import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 
 /* Components */
-import App from './components/App.react'
+import App from '../components/App.react'
 
 /* Libraries */
-import pathfinder from './lib/pathfinder'
-import router from './lib/router'
+import pathfinder from './pathfinder'
+import router from './router'
 
 /* Routes */
-import routes from './config/routes'
+import routes from '../config/routes'
 
 /* Store */
-import configureStore from './store/configureStore'
+import configureStore from '../store/configureStore'
 
 /* Actions */
-import { CHANGE_ROUTE } from './constants/ActionTypes'
-import * as Actions from './actions/Actions'
+import { CHANGE_ROUTE } from '../constants/ActionTypes'
+import * as Actions from '../actions/Actions'
 
 /* Reducer */
-import Reducer from './reducers'
+import Reducer from '../reducers'
 
 const store = configureStore();
 
@@ -47,5 +47,5 @@ function rerender() {
   );
 }
 
-store.subscribe(rerender);
-rerender();
+store.subscribe(rerender)
+rerender()

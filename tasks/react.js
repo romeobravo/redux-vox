@@ -10,7 +10,7 @@ var uglify     = require('uglifyify');
 
 module.exports = function(gulp) {
   gulp.task('react', function() {
-    var stream = browserify('./react/main.react.js')
+    var stream = browserify('./react/lib/main.react.js')
       .transform(babelify)
       // .transform(uglify)
       .bundle()
