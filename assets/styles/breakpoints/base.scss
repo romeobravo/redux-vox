@@ -1,0 +1,42 @@
+* {
+  box-sizing: border-box;
+  position: relative;
+}
+
+.header {
+  @extend .s12;
+  background: $baby-blue;
+  padding: 0 0 20px 0;
+
+  .header-logo {
+    @extend 
+      .s12, 
+      .flex;
+    height: 140px;
+    font-size: 20px;
+    line-height: 32px;
+  }
+  .header-nav {
+    @extend 
+      .s9,
+      .flex;
+    margin: 0 auto;
+    padding: 20px 0;
+    border-top: 1px solid $off-black;
+    border-bottom: 1px solid $off-black;
+  }
+  .header-nav-item {
+    @extend 
+      .s3,
+      .flex;
+    height: 30px;
+    cursor: pointer;
+    &:hover {
+      background: $white;
+    }
+  }
+  .header-sub-nav {
+    height: 100px;
+    background: $temp;
+  }
+}

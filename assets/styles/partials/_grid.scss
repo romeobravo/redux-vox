@@ -1,0 +1,53 @@
+$grid-columns: 12;
+
+$grid-breakpoints: (
+  (s),
+  (m, 768px),
+  (l, 1200px)
+);
+
+%col {
+  // display: inline-block;
+}
+
+.center {
+  margin: 0 auto;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+}
+
+@mixin grid-base($namespace) {
+  .#{$namespace}0 {
+    display: none;
+  }
+
+  @for $i from 1 through $grid-columns {
+    .#{$namespace}#{$i} {
+      width: 100% / ($grid-columns / $i);
+      @extend %col;
+    }
+  }
+}
+
+@each $val in $grid-breakpoints {
+  @if length($val) == 1 {
+
+    $namespace: nth($val, 1);
+    @include grid-base($namespace);
+
+  } @else {
+
+    $namespace: nth($val, 1);
+    $size: nth($val, 2);
+
+    @media only screen and (min-width: #{$size}) {
+      @include grid-base($namespace);
+    }
+  }
+}
