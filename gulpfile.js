@@ -10,7 +10,8 @@ var tasks = [
   'images',
   'styles',
   'static',
-  'generate'
+  'generate',
+  'webpack'
 ];
 tasks.forEach(function(task) {
   require('./tasks/' + task)(gulp);
@@ -28,11 +29,11 @@ gulp.task('dev', function() {
 });
 
 gulp.task('default', [
-  'dev',
-  'react',
+  'webpack',
   'javascript',
   'images',
   'static',
   'styles',
+  'dev',
   'watch'
 ]);

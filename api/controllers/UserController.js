@@ -1,6 +1,8 @@
-var BaseController = require('../../lib/BaseController');
+// import $ from '../../lib/Models'
+import { User } from '../../lib/Models'
+import BaseController from '../../lib/BaseController'
 
-var User = require('../models/User');
+// var User = require('../models/User');
 
 class UserController extends BaseController {
   constructor() {
@@ -12,6 +14,7 @@ class UserController extends BaseController {
   }
 
   get(req, res) {
+    console.log(User)
     var user = User.find(req.params.id)
     res.json({
       hello: 'world1'
@@ -41,4 +44,4 @@ class UserController extends BaseController {
   }
 }
 
-module.exports = new UserController;
+export default new UserController

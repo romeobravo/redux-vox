@@ -1,6 +1,5 @@
-var BaseController = require('../../lib/BaseController');
-
-var HomePost = require('../models/HomePost')
+import BaseController from '../../lib/BaseController'
+import HomePost from '../models/HomePost'
 
 class HomePostController extends BaseController {
   constructor() {
@@ -20,7 +19,6 @@ class HomePostController extends BaseController {
         })
       });
   }
-
 }
 
-module.exports = new HomePostController;
+export default new HomePostController

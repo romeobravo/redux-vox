@@ -1,7 +1,7 @@
 /**
  * Sync static files to public folder.
  */
-var changed    = require('gulp-changed');
+var changed = require('gulp-changed');
 
 module.exports = function(gulp) {
   gulp.task('javascript', function() {

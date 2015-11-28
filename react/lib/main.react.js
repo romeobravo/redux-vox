@@ -1,4 +1,4 @@
-import 'babel-core/polyfill'
+/* React */
 import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
@@ -49,3 +49,4 @@ function rerender() {
 
 store.subscribe(rerender)
 rerender()
+console.log('App Online2')
