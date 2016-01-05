@@ -5,7 +5,7 @@
   "main": "starter.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "gulp"
+    "start": "gulp --gulpfile \"./tasks/gulpfile.js\" --cwd \"./\""
   },
   "babel": {
     "presets": [
@@ -16,22 +16,20 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "babel": "^6.2.4",
-    "babel-core": "^6.2.4",
-    "babel-loader": "^6.2.0",
-    "babel-polyfill": "^6.2.4",
-    "babel-preset-es2015": "^6.2.4",
-    "babel-preset-react": "^6.2.4",
-    "babel-register": "^6.2.4",
-    "babelify": "^7.2.0",
+    "babel": "6.3.26",
+    "babel-core": "6.3.26",
+    "babel-loader": "6.2.0",
+    "babel-polyfill": "6.3.14",
+    "babel-preset-es2015": "*",
+    "babel-preset-react": "*",
+    "babel-register": "*",
+    "babelify": "7.2.0",
     "beepbeep": "^1.2.0",
     "body-parser": "^1.14.1",
     "bookshelf": "^0.8.2",
-    "browserify": "^12.0.1",
     "classnames": "^2.2.1",
     "del": "^2.1.0",
     "dotenv": "^1.2.0",
-    "express": "^4.13.3",
     "flux": "^2.1.1",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.0.2",
@@ -44,6 +42,8 @@
     "knex": "^0.8.6",
     "koa": "^1.1.2",
     "koa-send": "^3.1.0",
+    "pathfinder": "git+https://github.com/romeobravo/pathfinder.git",
+    "vox-router": "git+https://github.com/romeobravo/vox-router.git",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
     "react-redux": "^4.0.0",
@@ -54,15 +54,15 @@
     "sqlite3": "^3.1.0",
     "superagent": "^1.4.0",
     "uglifyify": "^3.0.1",
-    "vinyl-source-stream": "^1.1.0"
+    "vinyl-source-stream": "^1.1.0",
+    "webpack": "^1.12.9"
   },
   "devDependencies": {
     "gulp-sourcemaps": "^1.6.0",
     "jsx-loader": "^0.13.2",
-    "minimist": "^1.2.0",
     "morgan": "^1.6.1",
     "vinyl-buffer": "^1.0.0",
-    "webpack": "^1.12.9",
-    "webpack-dev-server": "^1.12.0"
+    "webpack-dev-server": "^1.12.9",
+    "react-hot-loader": "1.3.0"
   }
 }

@@ -3,7 +3,6 @@ var nodemon = require('gulp-nodemon');
 
 var tasks = [
   'clean',
-  'react',
   'sync',
   'watch',
   'javascript',
@@ -11,10 +10,11 @@ var tasks = [
   'styles',
   'static',
   'generate',
-  'webpack'
+  'webpack',
+  'webpack-dev-server'
 ];
 tasks.forEach(function(task) {
-  require('./tasks/' + task)(gulp);
+  require('./' + task)(gulp);
 });
 
 gulp.task('dev', function() {
@@ -29,7 +29,7 @@ gulp.task('dev', function() {
 });
 
 gulp.task('default', [
-  'webpack',
+  'webpack-dev-server',
   'javascript',
   'images',
   'static',

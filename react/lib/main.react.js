@@ -7,11 +7,13 @@ import { Provider } from 'react-redux'
 import App from '../components/App.react'
 
 /* Libraries */
-import pathfinder from './pathfinder'
+import Pathfinder from 'pathfinder'
+import VoxRouter from 'vox-router'
 import router from './router'
 
 /* Routes */
 import routes from '../config/routes'
+import voxRoutes from '../config/vox-routes'
 
 /* Store */
 import configureStore from '../store/configureStore'
@@ -24,18 +26,18 @@ import * as Actions from '../actions/Actions'
 import Reducer from '../reducers'
 
 const store = configureStore();
+const pathfinder = new Pathfinder({
+  event: CHANGE_ROUTE
+})
 
-pathfinder.init({
-  action: function(url) {
-    store.dispatch(Actions.changeRoute(url))
-  },
-  CHANGE_EVENT: CHANGE_ROUTE
-});
+pathfinder.on(CHANGE_ROUTE, function(url) {
+  store.dispatch(Actions.changeRoute(url))
+})
 
 router.init({ routes })
 
 function rerender() {
-  let view = router.run(store.getState().route);
+  let view = router.run(store.getState().route)
   view = (
     <Provider store={store}>
       {view.render}
@@ -44,9 +46,12 @@ function rerender() {
   render(
     view,
     document.getElementById('react-root')
-  );
+  )
 }
 
 store.subscribe(rerender)
+console.log(store.getState(), 'hello')
 rerender()
-console.log('App Online2')
+console.log('App Online')
+
+const voxRouter = new VoxRouter({ routes: voxRoutes })
