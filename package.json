@@ -7,12 +7,6 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "gulp --gulpfile \"./tasks/gulpfile.js\" --cwd \"./\""
   },
-  "babel": {
-    "presets": [
-      "es2015",
-      "react"
-    ]
-  },
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -42,7 +36,7 @@
     "imagemin-pngquant": "^4.2.0",
     "isomorphic-fetch": "^2.2.0",
     "knex": "^0.8.6",
-    "koa": "^1.1.2",
+    "koa": "2.0.0-alpha.3",
     "koa-send": "^3.1.0",
     "pathfinder": "git+https://github.com/romeobravo/pathfinder.git",
     "react": "^0.14.3",
