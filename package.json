@@ -30,6 +30,7 @@
     "classnames": "^2.2.1",
     "del": "^2.1.0",
     "dotenv": "^1.2.0",
+    "es6-promise": "^3.0.2",
     "flux": "^2.1.1",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.0.2",
@@ -39,11 +40,11 @@
     "gulp-sass": "^2.0.4",
     "gulp-util": "^3.0.6",
     "imagemin-pngquant": "^4.2.0",
+    "isomorphic-fetch": "^2.2.0",
     "knex": "^0.8.6",
     "koa": "^1.1.2",
     "koa-send": "^3.1.0",
     "pathfinder": "git+https://github.com/romeobravo/pathfinder.git",
-    "vox-router": "git+https://github.com/romeobravo/vox-router.git",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
     "react-redux": "^4.0.0",
@@ -55,6 +56,7 @@
     "superagent": "^1.4.0",
     "uglifyify": "^3.0.1",
     "vinyl-source-stream": "^1.1.0",
+    "vox-router": "git+https://github.com/romeobravo/vox-router.git",
     "webpack": "^1.12.9"
   },
   "devDependencies": {

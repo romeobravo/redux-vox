@@ -15,13 +15,17 @@ function find(node, path) {
 }
 
 function buildChain(root, node) {
-  let chain = React.createElement(node.component)
+  let chain = React.createElement(node.component, { hello: 'hello' })
   while(root != node) {
     node = node.parent
-    chain = React.createElement(node.component, {}, chain)
+    chain = React.createElement(node.component, Object.assign({}, { hello: 'hello' }), chain)
   }
   return chain
 }
+
+// function buildElement(root, chain) {
+
+// }
 
 function build(root, node) {
   return {

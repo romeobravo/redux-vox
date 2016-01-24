@@ -25,23 +25,23 @@ import * as Actions from '../actions/Actions'
 /* Reducer */
 import Reducer from '../reducers'
 
-const store = configureStore();
+const store = configureStore({
+  route: {
+    path: window.pathname
+  }
+})
 const pathfinder = new Pathfinder({
   event: CHANGE_ROUTE
-})
-
-pathfinder.on(CHANGE_ROUTE, function(url) {
+}).on(CHANGE_ROUTE, function(url) {
   store.dispatch(Actions.changeRoute(url))
 })
 
 router.init({ routes })
 
 function rerender() {
-  let view = router.run(store.getState().route)
-  view = (
-    <Provider store={store}>
-      {view.render}
-    </Provider>
+  console.log('state', store.getState())
+  const view = (
+    <App level={0} store={store.getState()} actions={Actions} />
   )
   render(
     view,

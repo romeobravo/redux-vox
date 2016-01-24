@@ -1,5 +1,6 @@
 /* React */
 import React, { Component, PropTypes } from 'react'
+import ViewComponent from '../lib/ViewComponent'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
@@ -9,10 +10,15 @@ import * as Actions from '../actions/Actions'
 /* Components */
 import Header from './Header.react'
 
-class App extends Component {
+
+class App extends ViewComponent {
 
   constructor(props) {
     super(props)
+    this.downstream = [
+      'store',
+      'actions'
+    ]
   }
 
   componentDidMount() {
@@ -23,29 +29,14 @@ class App extends Component {
     return (
       <div>
         <Header />
-        <div><span>{this.props.route}</span></div>
+        <div><span>{this.props.store.route.path}</span></div>
         <a href="/">App</a><br/>
         <a href="/about">About</a>
         <a href="/logout">Logout</a>
-        { this.props.children }
+        { this.view() }
       </div>
     );
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    route: state.route
-  }
-}
-
-function mapDispatchToProps(dispatch) {
-  return {
-    actions: bindActionCreators(Actions, dispatch)
-  }
-}
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(App)
+export default App
