@@ -19,7 +19,7 @@ tasks.forEach(function(task) {
 
 gulp.task('dev', function() {
   return nodemon({
-    script: 'lib/starter.js',
+    script: 'lib/boot.js',
     execMap: {
       js: "node --use_strict"
     },

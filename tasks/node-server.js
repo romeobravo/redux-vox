@@ -5,7 +5,7 @@ module.exports = function(gulp) {
     return nodemon({
       script: 'lib/starter.js',
       execMap: {
-        js: "node --use_strict"
+        js: "node --debug --use_strict"
       },
       ignore: ['public'],
       ext: 'js'
