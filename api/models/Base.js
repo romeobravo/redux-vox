@@ -1,114 +1,114 @@
-var knex = require('../../lib/knex');
+import knex from '../../lib/knex'
 
 function validateType(name, type, attribute) {
-  var errors = [];
+  let errors = []
   switch(type) {
     case 'string':
       if(typeof(attribute) != 'string') {
-        errors.push(`Attribute ${name} is not of type ${type}.`);
+        errors.push(`Attribute ${name} is not of type ${type}.`)
       }
-      break;
-  }  
+      break
+  }
   return errors
 }
 
 function validateMinLength(name, minLength, attribute) {
-  var errors = [];
+  let errors = []
   if(attribute.length < minLength) {
-    errors.push(`Attribute ${name} should be a minimum of ${minLength} characters.`);
+    errors.push(`Attribute ${name} should be a minimum of ${minLength} characters.`)
   }
-  return errors;
+  return errors
 }
 
 function validateMaxLength(name, maxLength, attribute) {
-  var errors = [];
+  let errors = []
   if(attribute.length > maxLength) {
-    errors.push(`Attribute ${name} should be a maximum of ${maxLength} characters.`);
+    errors.push(`Attribute ${name} should be a maximum of ${maxLength} characters.`)
   }
-  return errors;
+  return errors
 }
 
 function validate(name, rules, attribute) {
-  var errors = [];
-  for(var i in rules) {
+  let errors = []
+  for(let i in rules) {
     switch(i) {
       case 'type':
-        errors = errors.concat(validateType(name, rules[i], attribute));
-        break;
+        errors = errors.concat(validateType(name, rules[i], attribute))
+        break
       case 'minLength':
-        errors = errors.concat(validateMinLength(name, rules[i], attribute));
-        break;
+        errors = errors.concat(validateMinLength(name, rules[i], attribute))
+        break
       case 'maxLength':
-        errors = errors.concat(validateMaxLength(name, rules[i], attribute));
-        break;        
+        errors = errors.concat(validateMaxLength(name, rules[i], attribute))
+        break
     }
   }
-  return errors;
+  return errors
 }
 
 class Base {
   constructor(params) {
-    this.errors = ['Object is not validated'];
-    this.keys = [];
-    return this.new(params);
+    this.errors = ['Object is not validated']
+    this.keys = []
+    return this.new(params)
   }
 
   static tableName() {
-    return 'base';
+    return 'base'
   }
 
   static find(id) {
-    return knex(this.tableName()).select().where({ id: id });
+    return knex(this.tableName()).select().where({ id: id })
   }
 
   static all() {
-    return knex(this.tableName()).select();
+    return knex(this.tableName()).select()
   }
 
   static count() {
-    return knex(this.tableName()).select().count();
+    return knex(this.tableName()).select().count()
   }
 
   get() {
-    var object = {};
+    let object = {}
     this.keys.forEach( key => object[key] = this[key] )
-    return object;
+    return object
   }
 
   new(params) {
-    var self = this;
-    var properties = {};
-    self.keys = [];
-    for(var i in params) {
+    let self = this
+    let properties = {}
+    self.keys = []
+    for(let i in params) {
       if(!self[i]) {
-        self[i] = params[i];
+        self[i] = params[i]
       }
-      self.keys.push(i);
+      self.keys.push(i)
     }
-    return this;
+    return this
   }
 
   validate() {
-    this.errors = [];
-    for(var i in this.validate) {
-      this.errors = this.errors.concat(validate(i, this.validate[i], this[i]));
+    this.errors = []
+    for(let i in this.validate) {
+      this.errors = this.errors.concat(validate(i, this.validate[i], this[i]))
     }
-    return this;
+    return this
   }
 
   save() {
-    this.validate();
+    this.validate()
     if(!this.errors.length)
-      return knex(this.tableName).insert(this.get());
+      return knex(this.tableName).insert(this.get())
     else
-      return this;
+      return this
   }
 
   create(params) {
-    this.new(params);
-    return this.save();
+    this.new(params)
+    return this.save()
   }
 
 }
 
-module.exports = Base
+export default Base

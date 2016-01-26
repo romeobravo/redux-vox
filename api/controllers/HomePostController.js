@@ -6,18 +6,15 @@ class HomePostController extends BaseController {
     super('/home_post')
   }
 
-  get(req, res) {
+  async get(ctx) {
     // var post = new HomePost({
     //   title: 'New Post',
     //   content: 'lorum'
     // }).validate();
-    HomePost
-      .all()
-      .then(function(result) {
-        res.json({
-          data: result
-        })
-      });
+    var result = await HomePost.all()
+    ctx.body = {
+      data: result
+    }
   }
 }
 

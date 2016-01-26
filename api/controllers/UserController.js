@@ -1,8 +1,5 @@
-// import $ from '../../lib/Models'
 import { User } from '../../lib/Models'
 import BaseController from '../../lib/BaseController'
-
-// var User = require('../models/User');
 
 class UserController extends BaseController {
   constructor() {
@@ -13,34 +10,33 @@ class UserController extends BaseController {
     });
   }
 
-  get(req, res) {
-    console.log(User)
-    var user = User.find(req.params.id)
-    res.json({
+  get(ctx) {
+    let user = User.find(ctx.params.id)
+    ctx.body = {
       hello: 'world1'
-    })
+    }
   }
 
-  post(req, res) {
-    var user = User.new({
+  post(ctx) {
+    let user = User.new({
       name: req.body.email
     });
 
-    res.json({
+    ctx.body = {
       hello: 'post'
-    })
+    }
   }
 
-  authenticate(req, res) {
-    res.json({
+  authenticate(ctx) {
+    ctx.body = {
       hello: req.params.id
-    })
+    }
   }
 
-  login(req, res) {
-    res.json({
+  login(ctx) {
+    ctx.body = {
       hello: 'world'
-    })
+    }
   }
 }
 

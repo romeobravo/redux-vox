@@ -1,15 +1,13 @@
-import Models from '../../lib/ModelRegister'
-var Base = require('./Base');
+import Base from './Base'
 
 class User extends Base {
   constructor(params) {
-    super(params);
+    super(params)
   }
 
   static tableName() {
-    return 'users';
+    return 'users'
   }
 }
 
-Models.register('User', User)
-module.exports = User;
+export default User

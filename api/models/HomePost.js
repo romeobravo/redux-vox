@@ -1,8 +1,8 @@
-var Base = require('./Base');
+import Base from './Base'
 
 class HomePost extends Base {
   constructor(params) {
-    super(params);
+    super(params)
     this.validate.content = {
       type: 'string',
       minLength: 2,
@@ -11,8 +11,8 @@ class HomePost extends Base {
   }
 
   static tableName() {
-    return 'home_posts';
+    return 'home_posts'
   }
 }
 
-module.exports = HomePost;
+export default HomePost
