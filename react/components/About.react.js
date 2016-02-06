@@ -8,12 +8,12 @@ class About extends Component {
     console.log('hello')
   }
 
-  handleClick() {
-    console.log('click', this.props.actions)
+  handleClick(e) {
     this.props.actions.fetchAPI('frontend')
   }
 
   render() {
+    console.log(this)
     return (
       <div>
         <div><span>About2</span></div>
@@ -21,7 +21,7 @@ class About extends Component {
         <div><a href="/">Home</a></div>
         <div><a href="/profile">profile</a></div>
         <div><a href="/about/user">About/User</a></div>
-        <button onClick={this.handleClick}>Click Here</button>
+        <button onClick={this.handleClick.bind(this)}>Click Here</button>
         <span>{this.props.level}</span>
         { this.props.children }
       </div>

@@ -1,9 +1,11 @@
 $grid-columns: 12;
+$grid-md: 768px;
+$grid-lg: 1200px;
 
 $grid-breakpoints: (
   (s),
-  (m, 768px),
-  (l, 1200px)
+  (m, $grid-md),
+  (l, $grid-lg)
 );
 
 %col {

@@ -25,11 +25,9 @@ import * as Actions from '../actions/Actions'
 /* Reducer */
 import Reducer from '../reducers'
 
-const store = configureStore({
-  route: {
-    path: window.pathname
-  }
-})
+const store = configureStore()
+store.dispatch(Actions.changeRoute(window.location.pathname))
+
 const pathfinder = new Pathfinder({
   event: CHANGE_ROUTE
 }).on(CHANGE_ROUTE, function(url) {
@@ -39,9 +37,8 @@ const pathfinder = new Pathfinder({
 router.init({ routes })
 
 function rerender() {
-  console.log('state', store.getState())
   const view = (
-    <App level={0} store={store.getState()} actions={Actions} />
+    <App store={store.getState()} actions={Actions} />
   )
   render(
     view,
@@ -50,8 +47,6 @@ function rerender() {
 }
 
 store.subscribe(rerender)
-console.log(store.getState(), 'hello')
 rerender()
-console.log('App Online')
 
 const voxRouter = new VoxRouter({ routes: voxRoutes })

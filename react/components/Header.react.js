@@ -7,11 +7,11 @@ class Header extends Component {
   render() {
     return (
       <header className="header">
-        <div className="header-logo">
+        <div className="header__logo">
           <span>Vox</span>
         </div>
-        <div className="header-nav">
-          <div className="header-nav-item">
+        <div className="header__nav">
+          <div className="nav__item">
             <span>Home</span>
           </div>
         </div>

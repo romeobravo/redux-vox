@@ -1,0 +1,15 @@
+.card {
+  display: inline-block;
+  border-radius: $radius-md;
+  @include box-shadow-md;
+
+  .card__details {
+    font-size: $font-md;
+    background: $white;
+    padding: 20px 10px;
+  }
+
+  .img__img {
+    border-radius: $radius-md $radius-md 0 0;
+  }
+}

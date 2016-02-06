@@ -1,5 +1,5 @@
 import { CHANGE_ROUTE } from '../constants/ActionTypes'
-import VoxView from '../lib/VoxView'
+import VoxView from '../lib/vox-view'
 import VoxRoutes from '../config/vox-routes'
 
 const viewer = new VoxView({
@@ -8,7 +8,7 @@ const viewer = new VoxView({
 
 const initialState = {
   path: '/',
-  view: viewer.base()
+  view: viewer.go('/')
 }
 
 function route(state = initialState, action) {

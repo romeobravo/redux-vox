@@ -6,20 +6,24 @@ class ViewComponent extends Component {
     super(props)
   }
 
+  get _level() {
+    return this.props._level ? this.props._level : 0
+  }
+
   _downstream() {
     let obj = {}
-    for(key in this.props.keys) {
-      if(~this.downstream.indexOf(key)) {
+    for(let key of Object.keys(this.props)) {
+      if(this.downstream.includes(key)) {
         obj[key] = this.props[key]
       }
     }
-    obj.level = this.props.level + 1
+    obj._level = this._level + 1
     return obj
   }
 
-  view() {
+  get view() {
     let viewComponents = this.props.store.route.view
-    let level = this.props.level
+    let level = this._level
     if(level + 1 < viewComponents.length) {
       return React.createElement(viewComponents[level+1], Object.assign({}, this._downstream()))
     }
