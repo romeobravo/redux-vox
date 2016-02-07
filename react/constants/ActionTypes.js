@@ -6,4 +6,4 @@ export const COMPLETE_ALL = 'COMPLETE_ALL'
 export const CLEAR_COMPLETED = 'CLEAR_COMPLETED'
 export const CHANGE_ROUTE = 'CHANGE_ROUTE'
 
-export const API_REQUEST = 'API_REQUEST'
+export const API = 'API_REQUEST'

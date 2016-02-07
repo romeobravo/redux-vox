@@ -8,9 +8,9 @@ const initialState = {
 
 function api(state = initialState, action) {
   if(action.type == API) {
+    console.log(action.status)
     switch(action.status) {
       case 'fetching':
-        console.log('fetching')
         state.isFetching = true
         return state
       case 'error':

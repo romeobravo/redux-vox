@@ -1,7 +1,8 @@
 /* React */
-import React, { Component, PropTypes } from 'react'
+import React, { PropTypes } from 'react'
+import XComponent from '../lib/xcomponent'
 
-class About extends Component {
+class About extends XComponent {
 
   constructor(props) {
     super(props)
@@ -9,11 +10,10 @@ class About extends Component {
   }
 
   handleClick(e) {
-    this.props.actions.fetchAPI('frontend')
+    this.actions.fetchAPI(this.store, 'frontend')
   }
 
   render() {
-    console.log(this)
     return (
       <div>
         <div><span>About2</span></div>
@@ -22,8 +22,7 @@ class About extends Component {
         <div><a href="/profile">profile</a></div>
         <div><a href="/about/user">About/User</a></div>
         <button onClick={this.handleClick.bind(this)}>Click Here</button>
-        <span>{this.props.level}</span>
-        { this.props.children }
+        <span>{this.props._level}</span>
       </div>
     );
   }

@@ -1,3 +1,6 @@
+/* Babel Polyfill */
+import 'babel-polyfill';
+
 /* React */
 import React from 'react'
 import { render } from 'react-dom'
@@ -38,7 +41,7 @@ router.init({ routes })
 
 function rerender() {
   const view = (
-    <App store={store.getState()} actions={Actions} />
+    <App store={store} actions={Actions} />
   )
   render(
     view,

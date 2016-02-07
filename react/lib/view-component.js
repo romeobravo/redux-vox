@@ -22,12 +22,24 @@ class ViewComponent extends Component {
   }
 
   get view() {
-    let viewComponents = this.props.store.route.view
+    let viewComponents = this.storeState.route.view
     let level = this._level
     if(level + 1 < viewComponents.length) {
       return React.createElement(viewComponents[level+1], Object.assign({}, this._downstream()))
     }
     return null
+  }
+
+  get actions() {
+    return this.props.actions
+  }
+
+  get store() {
+    return this.props.store
+  }
+
+  get storeState() {
+    return this.props.store.getState()
   }
 }
 

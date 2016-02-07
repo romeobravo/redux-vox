@@ -45,12 +45,19 @@ export function apiSuccess(response) {
   return { type: types.API, status: 'success', response}
 }
 
-export async function fetchAPI(route) {
-  console.log(fetch, route)
-  apiStart(route)
-  await fetch(`http://www.reddit.com/r/${route}.json`, response)
-  console.log(response)
-  apiSuccess(response)
+export async function fetchAPI(store, route) {
+  const dispatch = store.dispatch
+  dispatch(apiStart(route))
+  try {
+    let response = await fetch(`http://www.reddit.com/r/${route}.json`)
+    let json = await response.json()
+    console.log(json)
+    dispatch(apiSuccess(json))
+    console.log(store.getState().api)
+  } catch(err) {
+    console.log(err)
+    dispatch(apiFailed(err))
+  }
 }
 
 // export function fetchAPI(route) {

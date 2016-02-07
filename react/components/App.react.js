@@ -33,7 +33,7 @@ class App extends ViewComponent {
         <div className="body">
           <Card />
           <div className="body__details">
-            <div><span>{this.props.store.route.path}</span></div>
+            <div><span>{this.storeState.route.path}</span></div>
             <a href="/">App</a><br/>
             <a href="/about">About</a>
             <a href="/logout">Logout</a>
