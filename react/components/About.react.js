@@ -6,11 +6,11 @@ class About extends XComponent {
 
   constructor(props) {
     super(props)
-    console.log('hello')
   }
 
   handleClick(e) {
-    this.actions.fetchAPI(this.store, 'frontend')
+    // this.actions.fetchAPI(this.store, 'frontend')
+    this.actions.ajaxAPI(this.store, 'frontend')
   }
 
   render() {

@@ -28,6 +28,10 @@ import * as Actions from '../actions/Actions'
 /* Reducer */
 import Reducer from '../reducers'
 
+/* Server Connection */
+import Connect from '../lib/connect'
+console.log(Connect)
+
 const store = configureStore()
 store.dispatch(Actions.changeRoute(window.location.pathname))
 

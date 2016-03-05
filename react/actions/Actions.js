@@ -60,6 +60,9 @@ export async function fetchAPI(store, route) {
   }
 }
 
+// import ajaxAPI from './ajax'
+export { ajaxAPI } from './ajax'
+
 // export function fetchAPI(route) {
 
 //   // Thunk middleware knows how to handle functions.
