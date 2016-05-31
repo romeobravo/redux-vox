@@ -10,7 +10,7 @@ class About extends XComponent {
 
   handleClick(e) {
     // this.actions.fetchAPI(this.store, 'frontend')
-    this.actions.ajaxAPI(this.store, 'frontend')
+    this.actions.get(this.store, 'frontend')
   }
 
   render() {

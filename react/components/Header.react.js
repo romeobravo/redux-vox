@@ -11,7 +11,7 @@ class Header extends Component {
           <span>Vox</span>
         </div>
         <div className="header__nav">
-          <div className="nav__item">
+          <div className="header__nav-item">
             <span>Home</span>
           </div>
         </div>

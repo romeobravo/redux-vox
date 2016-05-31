@@ -11,7 +11,6 @@ import * as Actions from '../actions/Actions'
 import Header from './Header.react'
 import Card from './Card.react'
 
-
 class App extends ViewComponent {
 
   constructor(props) {

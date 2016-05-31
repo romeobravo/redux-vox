@@ -10,6 +10,7 @@ class VoxView {
   }
 
   go() {
+    console.log('voxview go')
     return [
       this.routes.component,
       this.routes.children['about'].component

@@ -11,14 +11,14 @@
     background-color: $friendly-pink;
   }
 
-  .header__logo {
+  &__logo {
     @extend .s12, .flex;
     height: 140px;
     font-size: $font-lg;
     line-height: 32px;
   }
 
-  .header__nav {
+  &__nav {
     @extend .s9, .flex;
     margin: 0 auto;
     padding: 20px 0;
@@ -26,9 +26,9 @@
     border-bottom: 1px solid $off-black;
   }
 
-  .nav__item {
+  &__nav-item {
     @extend .s3, .flex;
-    height: 30px;
+    padding: 10px 0px;
     font-size: $font-md;
     cursor: pointer;
     transition: background 0.2s;
@@ -38,7 +38,7 @@
     }
   }
 
-  .header__sub-nav {
+  &__sub-nav {
     height: 100px;
     background: $temp;
   }

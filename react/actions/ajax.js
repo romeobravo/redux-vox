@@ -1,7 +1,7 @@
 import connect from '../lib/connect'
 import { apiStart, apiSuccess, apiFailed } from './Actions'
 
-export async function ajaxAPI(store, route) {
+export async function get(store, route) {
   const dispatch = store.dispatch
   dispatch(apiStart(route))
   try {

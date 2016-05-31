@@ -3,13 +3,13 @@
   border-radius: $radius-md;
   @include box-shadow-md;
 
-  .card__details {
+  &__details {
     font-size: $font-md;
     background: $white;
-    padding: 20px 10px;
+    padding: 20px 20px;
   }
 
-  .img__img {
+  &__image {
     border-radius: $radius-md $radius-md 0 0;
   }
 }

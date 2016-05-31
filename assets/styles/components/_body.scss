@@ -8,9 +8,9 @@
     padding: 20px;
     max-width: 1200px;
   }
-}
 
-.body__details {
-  padding-top: 10px;
-  font-size: $font-md;
+  &__details {
+    padding-top: 20px;
+    font-size: $font-md;
+  }
 }

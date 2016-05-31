@@ -10,7 +10,7 @@ var tasks = [
   'styles',
   'static',
   'generate',
-  'webpack',
+  // 'webpack',
   'webpack-dev-server'
 ];
 tasks.forEach(function(task) {
@@ -33,7 +33,6 @@ gulp.task('default', [
   'javascript',
   'images',
   'static',
-  'styles',
   'dev',
   'watch'
 ]);

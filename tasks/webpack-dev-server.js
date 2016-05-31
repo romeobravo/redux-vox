@@ -13,7 +13,8 @@ module.exports = function(gulp) {
         vox: [
           'webpack-dev-server/client?http://localhost:8080',
           'webpack/hot/dev-server',
-          './react/lib/main.react.js'
+          './react/lib/main.react.js',
+          './assets/styles/main.scss'
         ]
       },
       output: {
@@ -27,6 +28,10 @@ module.exports = function(gulp) {
             test: /\.jsx?$/,
             exclude: /node_modules/,
             loaders: ['react-hot', 'jsx-loader', 'babel-loader']
+          },
+          {
+            test: /\.scss$/,
+            loaders: ['style', 'css', 'autoprefixer', 'sass']
           }
         ]
       },
