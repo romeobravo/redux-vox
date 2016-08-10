@@ -1,0 +1,19 @@
+.app {
+  
+  &__main {
+    @extend .s12;
+    padding: 10px;
+    width: 100%;
+    margin: 0 auto;
+
+    @include large {
+      padding: 20px;
+      max-width: 1200px;
+    }
+  }
+
+  &__details {
+    padding-top: 20px;
+    font-size: $font-md;
+  }
+}

@@ -13,7 +13,7 @@ module.exports = function(gulp) {
         vox: [
           'webpack-dev-server/client?http://localhost:8080',
           'webpack/hot/dev-server',
-          './react/lib/main.react.js',
+          './react/lib/main.js',
           './assets/styles/main.scss'
         ]
       },

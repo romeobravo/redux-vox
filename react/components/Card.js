@@ -14,8 +14,8 @@ class Card extends Component {
           <span>Hello</span>
         </section>
       </div>
-    );
+    )
   }
 }
 
-export default Card;
+export default Card

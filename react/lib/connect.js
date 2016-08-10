@@ -14,18 +14,22 @@ class Connect {
       console.log('res', res)
     });
 
-    return request
-            .get(url)
-            .query(data)
-            .set('Accept', 'application/json')
+    return (
+      request
+        .get(url)
+        .query(data)
+        .set('Accept', 'application/json')
+    )
 
   }
 
   post(url, data, cb) {
-    return request
-            .post(url)
-            .send(data)
-            .set('Accept', 'application/json')
+    return (
+      request
+        .post(url)
+        .send(data)
+        .set('Accept', 'application/json')
+    )
   }
 
 }

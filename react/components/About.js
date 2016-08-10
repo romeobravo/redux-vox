@@ -1,8 +1,7 @@
 /* React */
-import React, { PropTypes } from 'react'
-import XComponent from '../lib/xcomponent'
+import React, { Component, PropTypes } from 'react'
 
-class About extends XComponent {
+class About extends Component {
 
   constructor(props) {
     super(props)
@@ -22,10 +21,9 @@ class About extends XComponent {
         <div><a href="/profile">profile</a></div>
         <div><a href="/about/user">About/User</a></div>
         <button onClick={this.handleClick.bind(this)}>Click Here</button>
-        <span>{this.props._level}</span>
       </div>
-    );
+    )
   }
-};
+}
 
-export default About;
+export default About

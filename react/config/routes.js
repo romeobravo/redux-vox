@@ -1,15 +1,11 @@
-import App from '../components/App.react';
-import About from '../components/About.react'
-import E404 from '../components/E404.react';
+// modules/routes.js
+import React from 'react'
+import { Route, IndexRoute } from 'react-router'
+import App from '../components/App'
+import About from '../components/About'
 
-const routes = {
-  component: App,
-  children: {
-    'about': {
-      component: About
-    }
-  },
-  '404': E404
-};
-
-export default routes;
+module.exports = (
+  <Route path="/" component={App}>
+    <Route path="/about" component={About}/>
+  </Route>
+)

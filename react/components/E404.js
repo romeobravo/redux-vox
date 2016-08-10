@@ -1,14 +1,14 @@
-var React = require('react');
+import React, { Component, PropTypes } from 'react'
 
-var E404 = React.createClass({
+class E404 extends Component {
   render() {
     return (
       <div>
         <span>404</span>
         <a href="/">Back</a>
       </div>
-    );
+    )
   }
-});
+}
 
-module.exports = E404;
+export default E404
