@@ -15,6 +15,9 @@ module.exports = function(gulp) {
           'webpack/hot/dev-server',
           './react/lib/main.js',
           './assets/styles/main.scss'
+        ],
+        vendor: [
+          './react/lib/vendor.js'
         ]
       },
       output: {
@@ -38,7 +41,8 @@ module.exports = function(gulp) {
       devtool: 'source-map',
       plugins: [
         new webpack.HotModuleReplacementPlugin(),
-        new webpack.NoErrorsPlugin()
+        new webpack.NoErrorsPlugin(),
+        new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js')
       ]
     });
 
