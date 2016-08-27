@@ -1,0 +1,24 @@
+.button {
+  padding: $gutter-md $gutter-lg;
+  margin: $gutter-lg 0;
+  border-radius: $radius-md;
+  border: 1px solid $grey;
+  box-shadow: 0 1px 2px $grey;
+  background: $white;
+  outline: none;
+  color: $off-black;
+  transition: all $transition-fast;
+
+  &:hover {
+    background: $off-white;
+  }
+
+  &:active {
+    box-shadow: none;
+  }
+
+  &--success {
+    background: $green;
+    color: $white;
+  }
+}

@@ -29,6 +29,8 @@ import Connect from '../lib/connect'
 const store = configureStore()
 
 render(
-  <Router routes={routes} history={browserHistory} store={store} actions={Actions}/>,
-  document.getElementById('react-root')
+  <Provider store={store}>
+    <Router routes={routes} history={browserHistory}/>
+  </Provider>,
+  document.getElementById('react')
 )

@@ -1,3 +1,20 @@
 $font-sm: 12px;
 $font-md: 16px;
 $font-lg: 24px;
+
+@import url(//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600);
+
+html {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 400;
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.8rem;
+  line-height: 2.5rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 300;
+}

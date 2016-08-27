@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
 /* Actions */
-import * as Actions from '../actions/Actions'
+import * as action from '../actions/Actions'
 
 /* Components */
 import Header from './Header'
@@ -12,10 +12,6 @@ import Card from './Card'
 import { Link } from 'react-router'
 
 class App extends Component {
-
-  constructor(props) {
-    super(props)
-  }
 
   componentDidMount() {
     // Actions.fetchHomePosts();
@@ -40,4 +36,4 @@ class App extends Component {
   }
 }
 
-export default App
+export default connect()(App)

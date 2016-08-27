@@ -1,7 +1,7 @@
-import fetch from 'isomorphic-fetch'
-
+/* Action Types */
 import * as types from '../constants/ActionTypes'
 
+/* Action Creators */
 export function addTodo(text) {
   return { type: types.ADD_TODO, text }
 }
@@ -31,17 +31,14 @@ export function changeRoute(route) {
 }
 
 export function apiStart(route) {
-  console.log('start')
   return { type: types.API, status: 'fetching' }
 }
 
 export function apiFailed(error) {
-  console.log('failed')
   return { type: types.API, status: 'error', error}
 }
 
 export function apiSuccess(response) {
-  console.log('success')
   return { type: types.API, status: 'success', response}
 }
 

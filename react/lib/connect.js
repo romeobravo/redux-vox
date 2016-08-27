@@ -7,23 +7,24 @@ class Connect {
     this.socket = io()
   }
 
-  get(url, data, cb) {
-    this.socket.emit('get', {
-      path: url
-    }, function(res) {
-      console.log('res', res)
-    });
+  get(path, data, cb) {
+    return new Promise((resolve, reject) => {
+      this.socket.emit('get', { path }, (res) => {
+        res.error ? reject(res) : resolve(res)
+      })
+    })
+  }
 
+  xhrGet(url, data) {
     return (
       request
         .get(url)
         .query(data)
         .set('Accept', 'application/json')
     )
-
   }
 
-  post(url, data, cb) {
+  xhrPost(url, data) {
     return (
       request
         .post(url)
@@ -36,9 +37,14 @@ class Connect {
 
 class Local {
   constructor() {
-    console.log('local')
+    // console.log('local')
+  }
+
+  get() {
+
   }
 }
 
-const exp = typeof window !== 'undefined' ? new Connect : Local
-export default exp
+const Connection = typeof window !== 'undefined' ? new Connect : new Local
+export const get = Connection.get
+export default Connection
