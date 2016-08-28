@@ -1,0 +1,11 @@
+.loading-bar {
+  height: 2px;
+  width: 0;
+  background: $baby-blue;
+  box-shadow: 0 0 4px $baby-blue;
+  transition: width $transition-fast;
+
+  &--started {
+    width: 20%;
+  }
+}

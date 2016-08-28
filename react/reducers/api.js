@@ -10,16 +10,19 @@ function api(state = initialState, action) {
   if(action.type == API) {
     switch(action.status) {
       case 'fetching':
-        state.isFetching = true
-        return state
+        return {
+          isFetching: true
+        }
       case 'error':
-        state.isFetching = false
-        state.error = action.error
-        return state
+        return {
+          isFetching: false,
+          error: action.error
+        }
       case 'success':
-        state.isFetching = false
-        state.response = action.response
-        return state
+        return {
+          isFetching: false,
+          response: action.response
+        }
       default:
         return state
     }

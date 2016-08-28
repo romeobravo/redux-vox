@@ -9,6 +9,7 @@ import * as action from '../actions/Actions'
 /* Components */
 import Header from './Header'
 import Card from './Card'
+import LoadingBar from './LoadingBar'
 import { Link } from 'react-router'
 
 class App extends Component {
@@ -21,6 +22,7 @@ class App extends Component {
     return (
       <div className="app">
         <Header />
+        <LoadingBar />
         <div className="app__main">
           <Card />
           <div className="app__details">
@@ -36,4 +38,8 @@ class App extends Component {
   }
 }
 
-export default connect()(App)
+function mapStateToProps(state) {
+  return state
+}
+
+export default connect(mapStateToProps)(App)
