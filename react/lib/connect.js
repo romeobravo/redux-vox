@@ -7,9 +7,33 @@ class Connect {
     this.socket = io()
   }
 
-  get(path, data, cb) {
+  get(url, data) {
+    if (url && url[0] == '/') {
+      return this.socketGet(url, data)
+    } else {
+      return this.xhrGet(url, data)
+    }
+  }
+
+  post(url, data) {
+    if (url && url[0] == '/') {
+      return this.socketPost(url, data)
+    } else {
+      return this.xhrPost(url, data)
+    }
+  }
+
+  socketGet(url, data) {
     return new Promise((resolve, reject) => {
-      this.socket.emit('get', { path }, (res) => {
+      this.socket.emit('get', { url }, (res) => {
+        res.error ? reject(res) : resolve(res)
+      })
+    })
+  }
+
+  socketPost(url, data) {
+    return new Promise((resolve, reject) => {
+      this.socket.emit('post', { url }, (res) => {
         res.error ? reject(res) : resolve(res)
       })
     })
