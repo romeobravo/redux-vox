@@ -8,10 +8,6 @@ $grid-breakpoints: (
   (l, $grid-lg)
 );
 
-%col {
-  // display: inline-block;
-}
-
 .center {
   margin: 0 auto;
 }
@@ -21,7 +17,7 @@ $grid-breakpoints: (
   justify-content: center;
   flex-direction: row;
   align-items: center;
-  align-content: center;
+  align-content: stretch;
 }
 
 @mixin grid-base($namespace) {
@@ -32,7 +28,6 @@ $grid-breakpoints: (
   @for $i from 1 through $grid-columns {
     .#{$namespace}#{$i} {
       width: 100% / ($grid-columns / $i);
-      @extend %col;
     }
   }
 }

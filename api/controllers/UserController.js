@@ -1,7 +1,6 @@
-import { User } from '../../lib/Models'
-import BaseController from '../../lib/BaseController'
+import vox from '../../lib/vox'
 
-class UserController extends BaseController {
+class UserController extends vox.controller {
   constructor() {
     super('/user')
     this.route({
@@ -11,14 +10,14 @@ class UserController extends BaseController {
   }
 
   get(ctx) {
-    let user = User.find(ctx.params.id)
+    let user = vox.User.find(ctx.params.id)
     ctx.body = {
       hello: 'world1'
     }
   }
 
   post(ctx) {
-    let user = User.new({
+    let user = vox.User.new({
       name: req.body.email
     });
 

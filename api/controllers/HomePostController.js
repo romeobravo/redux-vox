@@ -1,7 +1,6 @@
-import BaseController from '../../lib/BaseController'
-import HomePost from '../models/HomePost'
+import vox from '../../lib/vox'
 
-class HomePostController extends BaseController {
+class HomePostController extends vox.controller {
   constructor() {
     super('/home_post')
   }

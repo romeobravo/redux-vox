@@ -1,7 +1,6 @@
 /**
  * Sync files to public folder.
  */
-var babelify   = require('babelify');
 var changed    = require('gulp-changed');
 var source     = require('vinyl-source-stream');
 

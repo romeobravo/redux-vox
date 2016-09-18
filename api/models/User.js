@@ -1,6 +1,6 @@
-import Base from './Base'
+import vox from '../../lib/vox'
 
-class User extends Base {
+class User extends vox.model {
   constructor(params) {
     super(params)
   }

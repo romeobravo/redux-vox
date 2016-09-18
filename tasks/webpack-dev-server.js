@@ -4,6 +4,7 @@ var gutil            = require("gulp-util");
 var webpack          = require("webpack");
 var WebpackDevServer = require("webpack-dev-server");
 var path             = require('path');
+var autoprefixer     = require('autoprefixer');
 
 module.exports = function(gulp) {
   gulp.task("webpack-dev-server", function(callback) {
@@ -30,13 +31,16 @@ module.exports = function(gulp) {
           {
             test: /\.jsx?$/,
             exclude: /node_modules/,
-            loaders: ['react-hot', 'jsx-loader', 'babel-loader']
+            loaders: ['react-hot', 'jsx', 'babel?sourceMaps']
           },
           {
             test: /\.scss$/,
-            loaders: ['style', 'css', 'autoprefixer', 'sass']
+            loaders: ['style', 'css', 'sass']
           }
         ]
+      },
+      postcss: function() {
+        return [autoprefixer]
       },
       devtool: 'source-map',
       plugins: [

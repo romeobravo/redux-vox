@@ -1,22 +1,23 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
+import cx from 'bem-classes'
 
 const LoadingBar = (props) => {
-  console.log(props)
-  if (props.api) {
-    return (
-      <div className="loading-bar loading-bar--started"></div>
-    )
-  } else {
-    return (
-      <div className="loading-bar"></div>
-    )
-  }
+  const classes = cx(
+    'loading-bar',
+    { $started: props.fetching },
+    { $finished: props.response },
+  )
+  console.log(classes)
+  return (
+    <div className={classes}></div>
+  )
 }
 
 function mapStateToProps(state) {
   return {
-    api: state.api.isFetching
+    fetching: state.api.isFetching,
+    response: state.api.response,
   }
 }
 

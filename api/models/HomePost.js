@@ -1,6 +1,6 @@
-import Base from './Base'
+import vox from '../../lib/vox'
 
-class HomePost extends Base {
+class HomePost extends vox.model {
   constructor(params) {
     super(params)
     this.validate.content = {
